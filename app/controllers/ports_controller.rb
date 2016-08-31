@@ -90,6 +90,6 @@ class PortsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def port_params
-      params.require(:port).permit(:host_id, :name, :shutdown, :vrf, :vlan, :ipaddr, :netmask, :description, :configured)
+      params.require(:port).permit(:host_id, :name, :shutdown, :vrf, :vlan, :ipaddr, :netmask)
     end
 end
