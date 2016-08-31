@@ -1,0 +1,35 @@
+.page-header
+  h1 Listing ports
+
+table.table
+  thead
+    tr
+      th = sort_link @ransack, :host_id
+      th = sort_link @ransack, :name
+      th = sort_link @ransack, :shutdown
+      th = sort_link @ransack, :vrf
+      th = sort_link @ransack, :vlan
+      th = sort_link @ransack, :ipaddr
+      th = sort_link @ransack, :netmask
+      th = sort_link @ransack, :description
+      th = sort_link @ransack, :configured
+      th = sort_link @ransack, :updated_at
+      th
+      th
+
+  tbody
+    - @ports.each do |port|
+      tr
+        td = link_to port.host.hostname, host_ports_path(port.host)
+        td = port.name
+        td = port.shutdown
+        td = port.vrf
+        td = port.vlan
+        td = port.ipaddr
+        td = port.netmask
+        td = port.description
+        td = port.configured
+        td = port.updated_at
+        td = link_to 'Edit', edit_port_path(port), class: 'btn btn-sm btn-default'
+        td = link_to 'Destroy', port, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-sm btn-danger'
+

@@ -1,0 +1,31 @@
+.page-header
+  h1 Listing hosts
+
+table.table
+  thead
+    tr
+      th = sort_link @ransack, :hostname
+      th = sort_link @ransack, :connect
+      th = sort_link @ransack, :username
+      th = sort_link @ransack, :password
+      th = sort_link @ransack, :enable_password
+      th = sort_link @ransack, :updated_at
+      th
+      th
+      th
+  tbody
+    - @hosts.each do |host|
+      tr
+        td = link_to host.hostname, host_ports_path(host)
+        td = host.connect
+        td = host.username
+        td = host.password
+        td = host.enable_password
+        td = host.updated_at
+        td = link_to 'Add Port', new_host_port_path(host), class: 'btn btn-sm btn-primary'
+        td = link_to 'Edit', edit_host_path(host), class: 'btn btn-sm btn-default'
+        td = link_to 'Destroy', host, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-sm btn-danger'
+
+br
+
+= link_to 'New Host', new_host_path, class: 'btn btn-default'

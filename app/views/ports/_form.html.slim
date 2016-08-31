@@ -1,0 +1,14 @@
+= simple_form_for [@host, @port] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :shutdown
+    = f.input :vrf
+    = f.input :vlan
+    = f.input :ipaddr
+    = f.input :netmask
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

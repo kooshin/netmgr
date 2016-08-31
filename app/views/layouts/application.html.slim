@@ -1,0 +1,41 @@
+doctype html
+html lang="ja"
+  head
+    meta charset="utf-8"
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title Netmgr
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            span.sr-only
+              | Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to "Netmgr", "/", :class => "navbar-brand"
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li class=("active" if controller_name =~ /host/)
+              = link_to hosts_path
+                | Hosts
+            li class=("active" if controller_name =~ /port/)
+              = link_to ports_path
+                | Ports
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, :class => "alert alert-#{ name == 'alert' ? "danger" : "success" } alert-dismissable", :role => "alert" do
+          button.close type="button" data-dismiss="alert"
+            span aria-hidden="true"
+              | &times;
+            span.sr-only
+              | Close
+          = msg
+      = yield
+

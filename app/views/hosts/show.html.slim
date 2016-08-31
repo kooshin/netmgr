@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Hostname:
+  = @host.hostname
+p
+  strong Connect:
+  = @host.connect
+p
+  strong Username:
+  = @host.username
+p
+  strong Password:
+  = @host.password
+p
+  strong Enable password:
+  = @host.enable_password
+
+= link_to 'Edit', edit_host_path(@host)
+'|
+= link_to 'Back', hosts_path

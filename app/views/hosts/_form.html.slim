@@ -1,0 +1,12 @@
+= simple_form_for(@host) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :hostname
+    = f.input :connect
+    = f.input :username
+    = f.input :password, as: :string
+    = f.input :enable_password, as: :string
+
+  .form-actions
+    = f.button :submit

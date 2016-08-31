@@ -1,0 +1,31 @@
+p#notice = notice
+
+p
+  strong Host:
+  = @port.host.hostname
+p
+  strong Name:
+  = @port.name
+p
+  strong Shutdown:
+  = @port.shutdown
+p
+  strong Vrf:
+  = @port.vrf
+p
+  strong Vlan:
+  = @port.vlan
+p
+  strong Ipaddr:
+  = @port.ipaddr
+p
+  strong Netmask:
+  = @port.netmask
+p
+  strong Description:
+  = @port.description
+p
+  strong Configured:
+  = @port.configured
+
+= link_to 'Edit', edit_port_path(@port)

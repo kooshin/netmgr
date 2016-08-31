@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host: one
+  name: MyString
+  shutdown: false
+  vrf: MyString
+  vlan: MyString
+  ipaddr: MyString
+  netmask: MyString
+  description: MyString
+  configured: false
+
+two:
+  host: two
+  name: MyString
+  shutdown: false
+  vrf: MyString
+  vlan: MyString
+  ipaddr: MyString
+  netmask: MyString
+  description: MyString
+  configured: false
